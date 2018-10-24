@@ -1,0 +1,20 @@
+{
+  "name": "undress",
+  "version": "1.0.0",
+  "description": "Remove all node_modules directories found in a given path recursively",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Alexander Wallin <office@alexanderwallin.com> (http://alexanderwallin.com)",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^2.19.0",
+    "globby": "^8.0.1",
+    "rimraf": "^2.6.2"
+  },
+  "devDependencies": {
+    "prettier": "^1.14.3"
+  }
+}
