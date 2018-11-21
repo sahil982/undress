@@ -6,16 +6,16 @@ const rimraf = require('rimraf')
 program
   .version('1.0.0')
   .option(
-    '-p, --base-path',
-    'The base directory to search for node_modules',
-    '.'
+    '-p, --base-path <path>',
+    'The base directory to search for node_modules'
   )
   .option('-l, --list', 'Lists all found node_modules', false)
   .option('-d, --delete', 'Deletes all found directories', false)
   .parse(process.argv)
 
 async function run() {
-  const paths = await globby([`${program.basePath}/**/node_modules`], {
+  const basePath = program.basePath || '.'
+  const paths = await globby([`${basePath}/**/node_modules`], {
     onlyFiles: false,
   })
   const rootNodeModulesPaths = paths
