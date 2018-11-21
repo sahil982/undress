@@ -15,9 +15,12 @@ program
 
 async function run() {
   const basePath = program.basePath || '.'
-  const paths = await globby([`${basePath}/**/node_modules`], {
-    onlyFiles: false,
-  })
+  const paths = await globby(
+    [`${basePath}/**/node_modules`, `!${path.resolve('./node_modules')}`],
+    {
+      onlyFiles: false,
+    }
+  )
   const rootNodeModulesPaths = paths
     .filter(x => (x.match(/node_modules/g) || []).length === 1)
     .map(x => path.resolve(program.basePath, x))
