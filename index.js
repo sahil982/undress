@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 const program = require('commander')
 const globby = require('globby')
 const path = require('path')
